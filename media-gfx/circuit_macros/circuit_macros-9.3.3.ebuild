@@ -32,6 +32,7 @@ src_install() {
 	dodoc doc/Circuit_macros.pdf README CHANGES
 
 	if use examples; then
+		docinto examples
 		dodoc examples/*.m4 examples/examples.pdf
 	fi
 
