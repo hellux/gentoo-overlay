@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>noah.hellman@protonmail.com</email>
+		<name>Noah Hellman</name>
+	</maintainer>
+	<longdescription>
+		Circuit_macros is a set of macros for drawing high-quality line diagrams to
+		include in TeX, LaTeX, web, or similar documents, with support for SVG and
+		other formats. Fundamental electric circuit elements and basic logic gates
+		based on IEEE and European standards are included, with several tools and
+		examples of other types of diagrams. Elements can be scaled or drawn in any
+		orientation and are easy to modify. The advantages and disadvantages of such a
+		system are similar to those of TeX itself, which is macro-based and
+		non-WYSIWYG, with ordinary text input.
+	</longdescription>
+</pkgmetadata>
