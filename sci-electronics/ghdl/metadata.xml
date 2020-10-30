@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<upstream>
+		<bugs-to>https://github.com/ghdl/ghdl/issues</bugs-to>
+		<remote-id type="github">ghdl/ghdl</remote-id>
+	</upstream>
+	<maintainer type="person">
+		<email>noah.hellman@protonmail.com</email>
+		<name>Noah Hellman</name>
+	</maintainer>
+	<longdescription>
+		GHDL is an open-source simulator for the VHDL language. GHDL allows you
+		to compile and execute your VHDL code directly in your PC.
+		GHDL fully supports the 1987, 1993, 2002 versions of the IEEE 1076 VHDL
+		standard, and partially the latest 2008 revision (well enough to
+		support fixed_generic_pkg or float_generic_pkg).
+		By using a code generator (llvm, GCC or a builtin one), GHDL is much
+		faster than any interpreted simulator.
+	</longdescription>
+	<use>
+		<flag name="mcode">Use built-in backend.</flag>
+		<flag name="llvm">Use llvm backend.</flag>
+		<flag name="libghdl">Build the libghdl shared library.</flag>
+		<flag name="synth">Build with synthesis feature.</flag>
+		<flag name="openieee">Use GPL-compatible sources for the IEEE library.</flag>
+	</use>
+</pkgmetadata>
