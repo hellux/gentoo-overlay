@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
+	<upstream>
+		<bugs-to>https://gitlab.com/aplevich/circuit_macros/-/issues</bugs-to>
+		<remote-id type="gitlab">aplevich/circuit_macros</remote-id>
+	</upstream>
 	<maintainer type="person">
 		<email>noah.hellman@protonmail.com</email>
 		<name>Noah Hellman</name>
