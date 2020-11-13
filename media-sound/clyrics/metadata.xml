@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<upstream>
+		<bugs-to>https://github.com/trizen/clyrics/issues</bugs-to>
+		<remote-id type="github">trizen/clyrics</remote-id>
+	</upstream>
+	<maintainer type="person">
+		<email>noah.hellman@protonmail.com</email>
+		<name>Noah Hellman</name>
+	</maintainer>
+	<longdescription>
+		An extensible lyrics fetcher, with daemon support for cmus and mocp.
+	</longdescription>
+</pkgmetadata>
