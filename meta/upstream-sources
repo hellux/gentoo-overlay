@@ -1,0 +1,15 @@
+media-gfx/circuit_macros
+    Circuit_macros@[0-9]+\.[0-9]+\.[0-9]+@\.tar\.gz
+    https://ece.uwaterloo.ca/~aplevich/Circuit_macros
+
+sci-electronics/ghdl
+    v@[0-9]+\.[0-9]+@\.tar\.gz
+    https://github.com/ghdl/ghdl/releases
+
+sci-electronics/verilator
+    verilator-@[0-9]+\.[0-9]+@\.tgz
+    https://www.veripool.org/projects/verilator/wiki/Download
+
+media-sound/clyrics
+    @[0-9]+\.[0-9]+@\.tar\.gz
+    https://github.com/trizen/clyrics/releases
