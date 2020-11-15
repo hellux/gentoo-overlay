@@ -56,7 +56,8 @@ while read -r atom regex _; do
 
     prefix=$(echo "$regex" | cut -d@ -f1 | tr -d '\\')
     suffix=$(echo "$regex" | cut -d@ -f3 | tr -d '\\')
-    ebuild_version=$(grep "$atom" "$VERSIONS" | cut -f2 | sort -rV | head -n1)
+    ebuild_version=$(grep "$atom" "$VERSIONS" | cut -f2 | grep -v "9999" \
+                   | sort -rV | head -n1)
     ebuild_package=$prefix$ebuild_version$suffix
     [ -z "$ebuild_version" ] && exit 5
 
