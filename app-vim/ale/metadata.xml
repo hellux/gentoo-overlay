@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<upstream>
+		<bugs-to>https://github.com/dense-analysis/ale/issues</bugs-to>
+		<remote-id type="github">dense-analysis/ale</remote-id>
+	</upstream>
+	<maintainer type="person">
+		<email>noah.hellman@protonmail.com</email>
+		<name>Noah Hellman</name>
+	</maintainer>
+	<longdescription>
+		ALE (Asynchronous Lint Engine) is a plugin providing linting (syntax
+		checking and semantic errors) in NeoVim 0.2.0+ and Vim 8 while you edit
+		your text files, and acts as a Vim Language Server Protocol client.
+	</longdescription>
+</pkgmetadata>

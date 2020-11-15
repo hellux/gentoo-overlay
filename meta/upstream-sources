@@ -13,3 +13,7 @@ sci-electronics/verilator
 media-sound/clyrics
     @[0-9]+\.[0-9]+@\.tar\.gz
     https://github.com/trizen/clyrics/releases
+
+app-vim/ale
+    v@[0-9]+\.[0-9]+\.[0-9]@\.tar\.gz
+    https://github.com/dense-analysis/ale/releases
