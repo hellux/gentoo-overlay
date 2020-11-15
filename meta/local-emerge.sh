@@ -1,22 +1,25 @@
 #!/bin/sh
+# usage: ./local-emerge.sh overlay [dependency..] atom
+# Atoms/dependencies must include category and not just the package name.
 
 LOCAL_REPO="/usr/local/portage"
 
 overlay=$1
-atom=$2
-
 [ -z "$overlay" ] && exit 1
-[ -z "$atom" ] && exit 2
-[ -n "$3" ] && exit 3
+shift 1
+atoms="$*"
+[ -z "$atoms" ] && exit 2
 
-category="$(echo "$atom" | cut -d/ -f1)"
+for atom in $atoms; do
+    cat="$(echo "$atom" | cut -d/ -f1 | tr -dc '[:alnum:]-')"
+    pkg="$(echo "$atom" | cut -d/ -f2 | cut -d- -f1)"
+    catpkg="$cat/$pkg"
 
-if [ -r "$LOCAL_REPO/$atom" ]; then
-    rm -r "${LOCAL_REPO:?}/${atom:?}"
-fi
+    [ -r "$LOCAL_REPO/$catpkg" ] && rm -r "${LOCAL_REPO:?}/${catpkg:?}"
 
-mkdir -p "$LOCAL_REPO/$category"
-cp -r "$overlay/$atom" "$LOCAL_REPO/$category"
+    mkdir -p "$LOCAL_REPO/$cat"
+    cp -r "$overlay/$catpkg" "$LOCAL_REPO/$cat"
+done
 
 find "$LOCAL_REPO" -name '*.ebuild' | xargs -IF ebuild F digest
 
