@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>noah.hellman@protonmail.com</email>
+		<name>Noah Hellman</name>
+	</maintainer>
+	<longdescription>
+		A Gemini client including a CLI utility (like curl) and a
+		line-mode browser.
+	</longdescription>
+</pkgmetadata>
