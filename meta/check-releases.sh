@@ -59,11 +59,12 @@ while read -r atom regex _; do
     ebuild_version=$(grep "$atom" "$VERSIONS" | cut -f2 | grep -v "9999" \
                    | sort -rV | head -n1)
     ebuild_package=$prefix$ebuild_version$suffix
-    [ -z "$ebuild_version" ] && exit 5
 
-    if [ "$ebuild_package" = "$upstream_package" ];
+    if [ -z "$ebuild_version" ];
+    then echo "not installed, -- upstream $upstream_package"
+    elif [ "$ebuild_package" = "$upstream_package" ];
     then echo "up to date -- $ebuild_version"
-    else echo "NEW VERSION available -- $upstream_package"
+    else echo "NEW VERSION available -- $upstream_package ($ebuild_version)"
     fi
 done < "$PKGS"
 
