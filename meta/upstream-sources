@@ -17,3 +17,11 @@ media-sound/clyrics
 app-vim/ale
     v@[0-9]+\.[0-9]+\.[0-9]@\.tar\.gz
     https://github.com/dense-analysis/ale/releases
+
+games-emulation/xemu
+    xemu-v@[0-9]+\.[0-9]+\.[0-9]@\.tar\.gz
+    https://github.com/mborgerson/xemu/releases
+
+app-misc/rmlint
+    v@[0-9]+\.[0-9]+\.[0-9]@\.tar\.gz
+    https://github.com/sahib/rmlint/releases
