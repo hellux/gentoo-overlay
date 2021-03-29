@@ -3,7 +3,7 @@ media-gfx/circuit_macros
     https://ece.uwaterloo.ca/~aplevich/Circuit_macros
 
 sci-electronics/ghdl
-    v@[0-9]+\.[0-9]+@\.tar\.gz
+    v@[0-9]+\.[0-9]+(\.[0-9]+)?@\.tar\.gz
     https://github.com/ghdl/ghdl/releases
 
 sci-electronics/verilator
@@ -17,10 +17,6 @@ media-sound/clyrics
 app-vim/ale
     v@[0-9]+\.[0-9]+\.[0-9]@\.tar\.gz
     https://github.com/dense-analysis/ale/releases
-
-games-emulation/xemu
-    xemu-v@[0-9]+\.[0-9]+\.[0-9]@\.tar\.gz
-    https://github.com/mborgerson/xemu/releases
 
 app-misc/rmlint
     v@[0-9]+\.[0-9]+\.[0-9]@\.tar\.gz
