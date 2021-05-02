@@ -7,8 +7,8 @@ sci-electronics/ghdl
     https://github.com/ghdl/ghdl/releases
 
 sci-electronics/verilator
-    verilator-@[0-9]+\.[0-9]+@\.tgz
-    https://www.veripool.org/projects/verilator/wiki/Download
+    v@[0-9]+(\.[0-9]+)+@.tar\.gz
+    https://github.com/verilator/verilator/releases
 
 media-sound/clyrics
     @[0-9]+\.[0-9]+@\.tar\.gz
