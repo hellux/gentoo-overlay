@@ -3,7 +3,7 @@
 
 EAPI=7
 
-ADA_COMPAT=( gnat_201{6,7,8,9} )
+ADA_COMPAT=( gnat_201{7..9} )
 inherit ada llvm
 
 DESCRIPTION="VHDL 2008/93/87 simulator"
