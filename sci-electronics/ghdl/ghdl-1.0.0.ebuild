@@ -18,11 +18,7 @@ REQUIRED_USE="${ADA_REQUIRED_USE}
 	^^ ( mcode llvm )"
 
 RDEPEND="${ADA_DEPS}
-	llvm? ( <sys-devel/llvm-10:=
-		|| (
-			sys-devel/llvm:9
-		)
-	)"
+	llvm? ( <=sys-devel/llvm-11 )"
 DEPEND="${RDEPEND}"
 
 LLVM_MAX_SLOT=9
