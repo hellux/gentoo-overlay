@@ -23,6 +23,6 @@
 		<flag name="llvm">Use llvm backend.</flag>
 		<flag name="libghdl">Build the libghdl shared library.</flag>
 		<flag name="synth">Build with synthesis feature.</flag>
-		<flag name="openieee">Use GPL-compatible sources for the IEEE library.</flag>
+		<flag name="gplcompat">Use GPL-compatible sources for the IEEE library.</flag>
 	</use>
 </pkgmetadata>
