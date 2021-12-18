@@ -18,6 +18,10 @@ net-im/gomuks
     v@[0-9]+\.[0-9]+(\.[0-9]+)?@\.tar\.gz
     https://github.com/tulir/gomuks/releases
 
+net-misc/txtv
+    v@[0-9]+\.[0-9]+(\.[0-9]+)?@\.tar\.gz
+    https://github.com/voidcase/txtv/releases
+
 sci-electronics/ghdl
     v@[0-9]+\.[0-9]+(\.[0-9]+)?@\.tar\.gz
     https://github.com/ghdl/ghdl/releases
