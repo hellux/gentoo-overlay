@@ -16,6 +16,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	dev-python/beautifulsoup
+	dev-python/beautifulsoup4
 	dev-python/requests
 	dev-python/colorama"
