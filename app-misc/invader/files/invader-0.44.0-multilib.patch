@@ -1,0 +1,10 @@
+diff -u invader-0.44.0/CMakeLists.txt invader-0.44.0-multilib/CMakeLists.txt
+--- invader-0.44.0/CMakeLists.txt	2021-04-08 04:22:58.000000000 +0200
++++ invader-0.44.0-multilib/CMakeLists.txt	2021-12-23 19:47:38.600833385 +0100
+@@ -109,5 +109,5 @@
+ install(
+     TARGETS ${TARGETS_LIST}
+     RUNTIME DESTINATION bin
+-    LIBRARY DESTINATION lib
++    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+ )

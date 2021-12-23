@@ -1,0 +1,11 @@
+diff -ru invader-0.44.0/src/edit/qt/editor/subwindow/tag_editor_sound_subwindow.hpp invader-0.44.0-include_optional/src/edit/qt/editor/subwindow/tag_editor_sound_subwindow.hpp
+--- invader-0.44.0/src/edit/qt/editor/subwindow/tag_editor_sound_subwindow.hpp	2021-04-08 04:22:58.000000000 +0200
++++ invader-0.44.0-include_optional/src/edit/qt/editor/subwindow/tag_editor_sound_subwindow.hpp	2021-12-23 23:23:03.384958261 +0100
+@@ -3,6 +3,7 @@
+ #ifndef INVADER__EDIT__QT__TAG_EDITOR_SOUND_SUBWINDOW_HPP
+ #define INVADER__EDIT__QT__TAG_EDITOR_SOUND_SUBWINDOW_HPP
+ 
++#include <optional>
+ #include <QAudio>
+ 
+ #include "tag_editor_subwindow.hpp"
