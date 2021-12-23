@@ -1,3 +1,7 @@
+app-misc/invader
+    @[0-9]+\.[0-9]+\.[0-9]@\.tar\.gz
+    https://github.com/SnowyMouse/invader/tags
+
 app-misc/rmlint
     v@[0-9]+\.[0-9]+\.[0-9]@\.tar\.gz
     https://github.com/sahib/rmlint/releases
