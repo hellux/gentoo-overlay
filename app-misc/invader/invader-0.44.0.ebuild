@@ -18,6 +18,7 @@ DEPEND=">=dev-lang/python-3.7
 	>=app-arch/zstd-1.3
 	>=media-libs/tiff-4.2.0
 	>=dev-libs/libsquish-1.15
+	>=media-libs/libsamplerate-0.2
 	sys-libs/zlib
 	audio? (
 		>=media-libs/libsamplerate-0.1.9
