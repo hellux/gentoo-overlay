@@ -24,3 +24,7 @@ done
 find "$LOCAL_REPO" -name '*.ebuild' | xargs -IF ebuild F digest
 
 emerge -a "$atom"
+
+cat_dirs="$(find "$LOCAL_REPO" -mindepth 1 -maxdepth 1 -type d ! -name metadata -a ! -name profiles)"
+set -x
+rm -rI $cat_dirs
