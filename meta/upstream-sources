@@ -26,10 +26,6 @@ sci-electronics/ghdl
     v@[0-9]+\.[0-9]+(\.[0-9]+)?@\.tar\.gz
     https://github.com/ghdl/ghdl/releases
 
-sci-electronics/verilator
-    v@[0-9]+(\.[0-9]+)+@.tar\.gz
-    https://github.com/verilator/verilator/tags
-
 dev-libs/libsquish
     libsquish-@[0-9]+\.[0-9]+@\.tgz
     https://sourceforge.net/projects/libsquish/files/
