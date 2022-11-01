@@ -26,6 +26,10 @@ net-misc/txtv
     v@[0-9]+\.[0-9]+(\.[0-9]+)?@\.tar\.gz
     https://github.com/voidcase/txtv/tags
 
+sci-calculators/hwcalc
+    @[0-9]+\.[0-9]+\.[0-9]+@\.tar\.gz
+    https://git.sr.ht/~nhellman/hwcalc/refs
+
 sci-electronics/ghdl
     v@[0-9]+\.[0-9]+(\.[0-9]+)?@\.tar\.gz
     https://github.com/ghdl/ghdl/tags
