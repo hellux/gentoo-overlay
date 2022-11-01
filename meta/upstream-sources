@@ -4,7 +4,7 @@ app-misc/invader
 
 app-vim/ale
     v@[0-9]+\.[0-9]+\.[0-9]@\.tar\.gz
-    https://github.com/dense-analysis/ale/releases
+    https://github.com/dense-analysis/ale/tags
 
 media-gfx/circuit_macros
     Circuit_macros@[0-9]+\.[0-9]+(\.[0-9]+)?+@\.tar\.gz
@@ -12,19 +12,19 @@ media-gfx/circuit_macros
 
 media-sound/clyrics
     @[0-9]+\.[0-9]+@\.tar\.gz
-    https://github.com/trizen/clyrics/releases
+    https://github.com/trizen/clyrics/tags
 
 net-im/gomuks
     v@[0-9]+\.[0-9]+(\.[0-9]+)?@\.tar\.gz
-    https://github.com/tulir/gomuks/releases
+    https://github.com/tulir/gomuks/tags
 
 net-misc/txtv
     v@[0-9]+\.[0-9]+(\.[0-9]+)?@\.tar\.gz
-    https://github.com/voidcase/txtv/releases
+    https://github.com/voidcase/txtv/tags
 
 sci-electronics/ghdl
     v@[0-9]+\.[0-9]+(\.[0-9]+)?@\.tar\.gz
-    https://github.com/ghdl/ghdl/releases
+    https://github.com/ghdl/ghdl/tags
 
 dev-libs/libsquish
     libsquish-@[0-9]+\.[0-9]+@\.tgz
