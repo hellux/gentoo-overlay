@@ -1,0 +1,220 @@
+diff --git a/dependencies.cmake b/dependencies.cmake
+index 519ebf8a..3c92374a 100644
+--- a/dependencies.cmake
++++ b/dependencies.cmake
+@@ -21,21 +21,23 @@ find_package(Qt6 COMPONENTS Core Widgets REQUIRED)
+ find_package(SDL2 REQUIRED)
+ 
+ # Load Rat In a Tube
+-option(INVADER_USE_SYSTEM_CORROSION "Use system installed corrosion package" ON)
+-if(INVADER_USE_SYSTEM_CORROSION)
+-    find_package(Corrosion REQUIRED)
+-else()
+-    include(FetchContent)
+-    FetchContent_Declare(
+-        Corrosion
+-        GIT_REPOSITORY https://github.com/corrosion-rs/corrosion.git
+-        GIT_TAG v0.4.4
+-    )
+-    FetchContent_MakeAvailable(Corrosion)
++if(INVADER_SCRIPT)
++    option(INVADER_USE_SYSTEM_CORROSION "Use system installed corrosion package" ON)
++    if(INVADER_USE_SYSTEM_CORROSION)
++        find_package(Corrosion REQUIRED)
++    else()
++        include(FetchContent)
++        FetchContent_Declare(
++            Corrosion
++            GIT_REPOSITORY https://github.com/corrosion-rs/corrosion.git
++            GIT_TAG v0.4.4
++        )
++        FetchContent_MakeAvailable(Corrosion)
++    endif()
++
++    corrosion_import_crate(MANIFEST_PATH ext/riat/riatc/Cargo.toml)
+ endif()
+ 
+-corrosion_import_crate(MANIFEST_PATH ext/riat/riatc/Cargo.toml)
+-
+ # Audio things
+ set(DEP_AUDIO_LIBRARIES FLAC vorbisenc vorbisfile vorbis ogg samplerate)
+ 
+diff --git a/src/hek/map.cpp b/src/hek/map.cpp
+index bec9fe32..03509fb9 100644
+--- a/src/hek/map.cpp
++++ b/src/hek/map.cpp
+@@ -1,7 +1,9 @@
+ // SPDX-License-Identifier: GPL-3.0-only
+ 
+ #include <invader/hek/map.hpp>
++#ifdef INVADER_SCRIPT
+ #include <riat/riat.h>
++#endif
+ #include <invader/version.hpp>
+ #include <variant>
+ #include <optional>
+@@ -131,7 +133,11 @@ namespace Invader::HEK {
+             .tag_space_length = 64 * 1024 * 1024,
+             .maximum_file_size = static_cast<Pointer64>(INT32_MAX),
+             .maximum_scenario_script_nodes = MCC_CEA_MAXIMUM_SCENARIO_SCRIPT_NODES,
++#ifdef INVADER_SCRIPT
+             .scenario_script_compile_target = RIATCompileTarget::RIAT_HaloCEA,
++#else
++            .scenario_script_compile_target = -1,
++#endif
+             .scenario_name_and_file_name_must_be_equal = false,
+             .supports_external_bitmaps_map = true,
+             .supports_external_sounds_map = true,
+@@ -148,7 +154,11 @@ namespace Invader::HEK {
+             .tag_space_length = GEARBOX_TAG_SPACE_LENGTH,
+             .maximum_file_size = GEARBOX_MAX_FILE_SIZE,
+             .maximum_scenario_script_nodes = ORIGINAL_MAXIMUM_SCENARIO_SCRIPT_NODES,
++#ifdef INVADER_SCRIPT
+             .scenario_script_compile_target = RIATCompileTarget::RIAT_HaloCEGBXDemo,
++#else
++            .scenario_script_compile_target = -1,
++#endif
+             .supports_external_bitmaps_map = true,
+             .supports_external_sounds_map = true,
+             PC_BOILERPLATE
+@@ -164,7 +174,11 @@ namespace Invader::HEK {
+             .tag_space_length = GEARBOX_TAG_SPACE_LENGTH,
+             .maximum_file_size = GEARBOX_MAX_FILE_SIZE,
+             .maximum_scenario_script_nodes = ORIGINAL_MAXIMUM_SCENARIO_SCRIPT_NODES,
++#ifdef INVADER_SCRIPT
+             .scenario_script_compile_target = RIATCompileTarget::RIAT_HaloCustomEdition,
++#else
++            .scenario_script_compile_target = -1,
++#endif
+             .supports_external_bitmaps_map = true,
+             .supports_external_sounds_map = true,
+             .supports_external_loc_map = true,
+@@ -182,7 +196,11 @@ namespace Invader::HEK {
+             .tag_space_length = GEARBOX_TAG_SPACE_LENGTH,
+             .maximum_file_size = GEARBOX_MAX_FILE_SIZE,
+             .maximum_scenario_script_nodes = ORIGINAL_MAXIMUM_SCENARIO_SCRIPT_NODES,
++#ifdef INVADER_SCRIPT
+             .scenario_script_compile_target = RIATCompileTarget::RIAT_HaloCEGBX,
++#else
++            .scenario_script_compile_target = -1,
++#endif
+             .supports_external_bitmaps_map = true,
+             .supports_external_sounds_map = true,
+             PC_BOILERPLATE
+@@ -199,7 +217,11 @@ namespace Invader::HEK {
+             .maximum_file_size = xbox_max_file_size,
+ 
+             .maximum_scenario_script_nodes = ORIGINAL_MAXIMUM_SCENARIO_SCRIPT_NODES,
++#ifdef INVADER_SCRIPT
+             .scenario_script_compile_target = RIATCompileTarget::RIAT_HaloCEXboxNTSC,
++#else
++            .scenario_script_compile_target = -1,
++#endif
+             .uses_compression = true,
+ 
+             XBOX_BOILERPLATE(XBOX_REQUIRED_TAGS_ALL_2276)
+@@ -216,7 +238,11 @@ namespace Invader::HEK {
+             .maximum_file_size = xbox_max_file_size,
+ 
+             .maximum_scenario_script_nodes = ORIGINAL_MAXIMUM_SCENARIO_SCRIPT_NODES,
++#ifdef INVADER_SCRIPT
+             .scenario_script_compile_target = RIATCompileTarget::RIAT_HaloCEXboxNTSC,
++#else
++            .scenario_script_compile_target = -1,
++#endif
+             .uses_compression = true,
+ 
+             XBOX_BOILERPLATE(XBOX_REQUIRED_TAGS_ALL_EVERYTHING_ELSE)
+@@ -233,7 +259,11 @@ namespace Invader::HEK {
+             .maximum_file_size = xbox_max_file_size,
+ 
+             .maximum_scenario_script_nodes = ORIGINAL_MAXIMUM_SCENARIO_SCRIPT_NODES,
++#ifdef INVADER_SCRIPT
+             .scenario_script_compile_target = RIATCompileTarget::RIAT_HaloCEXboxNTSC,
++#else
++            .scenario_script_compile_target = -1,
++#endif
+             .uses_compression = true,
+ 
+             XBOX_BOILERPLATE(XBOX_REQUIRED_TAGS_ALL_EVERYTHING_ELSE)
+@@ -250,7 +280,11 @@ namespace Invader::HEK {
+             .maximum_file_size = xbox_max_file_size,
+ 
+             .maximum_scenario_script_nodes = ORIGINAL_MAXIMUM_SCENARIO_SCRIPT_NODES,
++#ifdef INVADER_SCRIPT
+             .scenario_script_compile_target = RIATCompileTarget::RIAT_HaloCEXboxNTSC,
++#else
++            .scenario_script_compile_target = -1,
++#endif
+             .uses_compression = true,
+ 
+             XBOX_BOILERPLATE(XBOX_REQUIRED_TAGS_ALL_EVERYTHING_ELSE)
+@@ -267,7 +301,11 @@ namespace Invader::HEK {
+             .maximum_file_size = static_cast<Pointer64>(INT32_MAX),
+ 
+             .maximum_scenario_script_nodes = ORIGINAL_MAXIMUM_SCENARIO_SCRIPT_NODES,
++#ifdef INVADER_SCRIPT
+             .scenario_script_compile_target = RIATCompileTarget::RIAT_HaloCEXboxNTSC,
++#else
++            .scenario_script_compile_target = -1,
++#endif
+             .uses_compression = true
+         },
+         {
+@@ -282,7 +320,11 @@ namespace Invader::HEK {
+             .maximum_file_size = xbox_demo_max_file_size,
+ 
+             .maximum_scenario_script_nodes = ORIGINAL_MAXIMUM_SCENARIO_SCRIPT_NODES,
++#ifdef INVADER_SCRIPT
+             .scenario_script_compile_target = RIATCompileTarget::RIAT_HaloCEXboxNTSC,
++#else
++            .scenario_script_compile_target = -1,
++#endif
+             .uses_compression = true,
+ 
+             XBOX_BOILERPLATE(XBOX_REQUIRED_TAGS_ALL_EVERYTHING_ELSE)
+diff --git a/src/invader.cmake b/src/invader.cmake
+index 0ab61ce6..22535c6f 100644
+--- a/src/invader.cmake
++++ b/src/invader.cmake
+@@ -247,4 +247,7 @@ set_source_files_properties(src/bitmap/stb/stb_impl.c PROPERTIES COMPILE_FLAGS -
+ include_directories(${CMAKE_CURRENT_BINARY_DIR} ${ZLIB_INCLUDE_DIRS} ext/riat/riatc/include)
+ 
+ # Link against everything
+-target_link_libraries(invader invader-bitmap-p8-palette ${CMAKE_THREAD_LIBS_INIT} ${ZLIB_LIBRARIES} ${DEP_AUDIO_LIBRARIES} ${DEP_SQUISH_LIBRARIES} riatc)
++target_link_libraries(invader invader-bitmap-p8-palette ${CMAKE_THREAD_LIBS_INIT} ${ZLIB_LIBRARIES} ${DEP_AUDIO_LIBRARIES} ${DEP_SQUISH_LIBRARIES})
++if(INVADER_SCRIPT)
++    target_link_libraries(riatc)
++endif()
+diff --git a/src/tag/parser/compile/scenario/pre_compile.cpp b/src/tag/parser/compile/scenario/pre_compile.cpp
+index 47685660..077a6045 100644
+--- a/src/tag/parser/compile/scenario/pre_compile.cpp
++++ b/src/tag/parser/compile/scenario/pre_compile.cpp
+@@ -7,7 +7,9 @@
+ #include <invader/file/file.hpp>
+ #include <invader/tag/parser/compile/scenario.hpp>
+ 
++#ifdef INVADER_SCRIPT
+ #include <riat/riat.hpp>
++#endif
+ 
+ namespace Invader::Parser {
+     static void merge_child_scenarios(BuildWorkload &workload, std::size_t tag_index, Scenario &scenario);
+@@ -60,6 +62,7 @@ namespace Invader::Parser {
+     }
+ 
+     void compile_scripts(Scenario &scenario, const HEK::GameEngineInfo &info, std::vector<std::string> &warnings, const std::vector<std::filesystem::path> &tags_directories, const std::optional<std::vector<std::pair<std::string, std::vector<std::byte>>>> &script_source) {
++#ifdef INVADER_SCRIPT
+         // Instantiate it
+         RIAT::Compiler instance(static_cast<RIATCompileTarget>(info.scenario_script_compile_target));
+ 
+@@ -668,6 +671,9 @@ namespace Invader::Parser {
+         scenario.script_string_data = std::move(string_data);
+         scenario.script_syntax_data = std::move(syntax_data);
+         scenario.references = std::move(new_references);
++#else
++    assert(false && "script compiler riat not compiled");
++#endif
+     }
+ 
+     void Scenario::pre_compile(BuildWorkload &workload, std::size_t tag_index, std::size_t struct_index, std::size_t) {
